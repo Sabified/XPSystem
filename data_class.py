@@ -1,4 +1,6 @@
 import random as random
+from playsound import playsound
+import winsound
 
 class Experience():
     def __init__(self, limit):
@@ -14,15 +16,22 @@ class Experience():
         self.xp += xp
         self.xp_levels += levels
 
-        while self.xp > self.limit:
-            self.xp_levels += 1
-            self.xp = self.xp - self.limit
+        if self.xp > self.limit:
+            while self.xp > self.limit:
+                self.xp_levels += 1
+                self.xp = self.xp - self.limit
+                winsound.PlaySound("level_up.wav", winsound.SND_ASYNC)
+        else:
+            winsound.PlaySound("get_xp.wav", winsound.SND_ASYNC)
 
     def get_xp(self):
         return self.xp
 
     def get_levels(self):
         return self.xp_levels
+
+    def get_limit(self):
+        return self.limit
 
 if __name__ == "__main__":
     xp_1 = Experience(limit=15)
