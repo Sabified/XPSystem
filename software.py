@@ -21,6 +21,14 @@ def getXp():
     XpSlider.configure(state='disabled')
     XpLabel.config(text = str(xp.get_levels()))
 
+def reset():
+    XpSlider.configure(state='normal')
+    XpSlider.set(0)
+    XpSlider.configure(state='disabled')
+
+    XpLabel.config(text="0")
+
+
 ProgName = tk.Label(window, font=('Comic Sans MS',30,'bold'),text="XP System", fg="lime")
 ProgName.place(x=400,y=30,anchor="center")
 
@@ -37,7 +45,7 @@ XpLabel.place(x=320,y=255, anchor="center")
 GetXPButton = tk.Button(window,text="Get XP",height=1, width=7,font=('Comic Sans MS',15,'bold'),command=getXp)
 GetXPButton.place(x=50,y=400)
 
-RestartButton = tk.Button(window,text="Reset",height=1, width=7,font=('Comic Sans MS',15,'bold'),command=xp.reset())
+RestartButton = tk.Button(window,text="Reset",height=1, width=7,font=('Comic Sans MS',15,'bold'),command=reset)
 RestartButton.place(x=650,y=400)
 
 window.mainloop()
