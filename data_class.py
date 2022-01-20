@@ -24,6 +24,9 @@ class Experience():
     def get_levels(self):
         return self.xp_levels
 
+    def get_limit(self):
+        return self.limit
+
 if __name__ == "__main__":
     xp_1 = Experience(limit=15)
 
