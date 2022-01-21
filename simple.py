@@ -7,6 +7,7 @@ to_add = 0
 print("Menu")
 
 while True:
+    print(f"You have {xp.get_xp()} xp and {xp.get_levels()} levels!")
     ans = input("GetXp or Restart? (g/r)")
 
     if ans == "g":
