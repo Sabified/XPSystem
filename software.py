@@ -22,6 +22,8 @@ def getXp():
     XpLabel.config(text = str(xp.get_levels()))
 
 def reset():
+    xp.reset()
+
     XpSlider.configure(state='normal')
     XpSlider.set(0)
     XpSlider.configure(state='disabled')
