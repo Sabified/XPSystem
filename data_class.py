@@ -1,5 +1,4 @@
-import random as random
-from playsound import playsound
+import random
 import winsound
 
 class Experience():
